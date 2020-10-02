@@ -8,8 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "gsap": "^3.5.1",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-gsap": "^2.2.1"
+  },
+  "devDependencies": {
+    "sass": "^1.26.11"
   }
 }

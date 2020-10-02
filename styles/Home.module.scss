@@ -1,0 +1,156 @@
+$black: #000;
+$beige: #F4EEE0;
+
+
+.topIntro{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 50vh;
+  z-index: 10;
+  background: $black;
+  .topIntroloadingBar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: $beige;
+  }
+}
+
+.bottomIntro{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 50vh;
+  z-index: 10;
+  background: $black;
+  .bottomIntroLoadingBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: $beige;
+  }
+}
+
+.container{
+  width: 1240px;
+  margin: 0 auto;
+  min-width: 1240px;
+  min-height: 100vh;
+}
+
+.themeButton{
+  width: 24px;
+  height: 24px;
+  background: $black;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  transform: translate(2px, -2px);
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  .name{
+    font-family: 'MAZIUSREVIEW20.09-Regular';
+    text-transform: uppercase;
+    font-size: 22rem;
+    color: $black;
+    letter-spacing: 0;
+    line-height: 23rem;
+  }
+  .description{
+    font-family: 'Graphik-Regular';
+    font-size: 1rem;
+    color: $black;
+    letter-spacing: 0.01em;
+    text-align: right;
+    line-height: 1.5rem;
+    transform: translateY(-5px);
+    span{
+      font-family: 'Graphik-Medium';
+    }
+  }
+}
+.surname{
+  font-family: 'MAZIUSREVIEW20.09-Extraitalic';
+  text-transform: uppercase;
+  font-size: 22rem;
+  color: $black;
+  letter-spacing: 0;
+  line-height: 23rem;
+  transform: translateY(-35px);
+  padding-bottom: 30px;
+  // background: pink;
+}
+.scroll{
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  transform: rotate(-90deg) translate(50px, 35px);
+  text-transform: uppercase;
+  font-family: 'Graphik-Regular';
+  font-size: 0.75rem;
+  color: $black;
+  letter-spacing: 0;
+}
+
+
+// WORK
+.workContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 140px 0;
+
+  .workTitle{
+    // background: yellow;
+    h2{
+      // background: pink;
+      position: relative;
+      top: 110px;
+      left: -70px;
+      transform: rotate(-90deg);
+      font-family: 'Graphik-Medium';
+      font-weight: normal;
+      font-size: 5rem;
+      color: $black;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  .workListContainer{
+    .workProject{
+      text-align: right;
+      p{
+        margin: 0;
+        display: inline;
+        font-family: 'MAZIUSREVIEW20.09-Regular';
+        font-weight: normal;
+        font-size: 5rem;
+        color: $black;
+        letter-spacing: 0;
+        line-height: 7rem;
+        cursor: pointer;
+        &:hover{
+          font-family: 'MAZIUSREVIEW20.09-Extraitalic';
+        }
+
+      }
+      
+    }
+  }
+}
