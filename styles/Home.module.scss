@@ -175,6 +175,17 @@ $beige: #F4EEE0;
         &:hover{
           font-family: 'MAZIUSREVIEW20.09-Extraitalic';
         }
+        &:hover::before{
+          content: '';
+          display: inline-block;
+          height: 80px;
+          width: 120px;
+          margin-right: 2rem;
+          transform: translateY(0.75rem);
+          // background: url(https://media.giphy.com/media/z193jwEWnkHEk/source.gif);
+          background: url(../public/kikzEyePreview.gif);
+          background-size: cover;
+        }
 
       }
       
