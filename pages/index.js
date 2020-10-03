@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { gsap } from 'gsap'
+import {TextPlugin} from "gsap/dist/TextPlugin";
 import { useRef, useEffect } from 'react'
 
 
@@ -8,10 +9,15 @@ import { useRef, useEffect } from 'react'
 export default function Home() {
 
   //INTRO ANIMATION
+    gsap.registerPlugin(TextPlugin)
+
     let introTopBlock = useRef(null)
     let introTopLoadingBar = useRef(null)
     let introBottomBlock = useRef(null)
     let introBottomLoadingBar = useRef(null)
+    let introTopNumberRef = useRef(null)
+    let introBottomNumberRef =useRef(null)
+
 
     let themeButtonRef = useRef(null)
     let nameRef = useRef(null)
@@ -19,6 +25,7 @@ export default function Home() {
     let descriptionRef = useRef(null)
     useEffect( () => {
       const introTl = gsap.timeline()
+      const percentageTl = gsap.timeline()
       introTl .to("body", {duration:0, overflow: "hidden"}, "start")
               .to(introTopLoadingBar, {duration:2, width: "100vw", ease: "power2.inOut"}, "start")
               .to(introBottomLoadingBar, {duration:2, width: "100vw", ease: "power2.inOut"}, "start")
@@ -26,18 +33,120 @@ export default function Home() {
               .to(introBottomBlock, {duration:2, yPercent: 100, ease: "power2.inOut"}, "stage02")
               .to(introTopBlock, {duration:0, display: "none"}, "stage03")
               .to(introBottomBlock, {duration:0, display: "none"}, "stage03")
-              .from(nameRef, {duration:2, y: "16rem", alpha: 0, rotate: -5.625, ease: "power2.inOut"}, "stage04-=2")
-              .from(surnameRef, {duration:2, y: "-28rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+              // .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+              .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+              .from(surnameRef, {duration:2, y: "28rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
               .from(descriptionRef, {duration:2, alpha: 0, ease: "power2.inOut"}, "stage04-=0.5")
               .from(themeButtonRef, {duration:2, scale: 0, ease: "power2.inOut"}, "stage04")
               .to("body", {duration:0, overflow: "visible"}, "stage05")
               .play()
+        
+        percentageTl.to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "0", ease: "power2.inOut"}, "-=0.02")
+                    .to(introBottomNumberRef, {duration:0.02, text: "1", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "2", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "3", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "4", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "5", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "6", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "7", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "8", ease: "power2.inOut"})
+                    .to(introBottomNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+                    .to(introTopNumberRef, {duration:0.02, text: "9", ease: "power2.inOut"})
+
       
     }, [])
     
     
 
   //
+
 
   return (
     <>
@@ -48,9 +157,11 @@ export default function Home() {
 
       <div className={styles.topIntro} ref={el => {introTopBlock = el}}>
         <div className={styles.topIntroloadingBar} ref={el => {introTopLoadingBar = el}}></div>
+        <div className={styles.topIntroNumber} ref={el => {introTopNumberRef = el}}>0</div>
       </div>
       <div className={styles.bottomIntro} ref={el => {introBottomBlock = el}}>
         <div className={styles.bottomIntroLoadingBar} ref={el => {introBottomLoadingBar = el}}></div>
+        <div className={styles.bottomIntroNumber} ref={el => {introBottomNumberRef = el}}>0</div>
       </div>
 
       <div className={styles.container}>
@@ -114,6 +225,9 @@ export default function Home() {
             </div>
             <div className={styles.workProject}>
               <p>Anuar Khalifi</p>
+            </div>
+            <div className={styles.workProject}>
+              <p>Dead Soul Slags</p>
             </div>
           </div>
 

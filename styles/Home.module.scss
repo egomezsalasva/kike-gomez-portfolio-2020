@@ -25,6 +25,16 @@ $beige: #F4EEE0;
     width: 0;
     background: $beige;
   }
+  .topIntroNumber{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-family: 'Graphik-Medium';
+    font-weight: normal;
+    font-size: 2rem;
+    color: $beige;
+    letter-spacing: 0;
+  }
 }
 
 .bottomIntro{
@@ -43,6 +53,16 @@ $beige: #F4EEE0;
     height: 1px;
     width: 0;
     background: $beige;
+  }
+  .bottomIntroNumber{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    font-family: 'Graphik-Medium';
+    font-weight: normal;
+    font-size: 2rem;
+    color: $beige;
+    letter-spacing: 0;
   }
 }
 
