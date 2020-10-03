@@ -181,10 +181,10 @@ export default function Home() {
           <div className={styles.description} ref={el => {descriptionRef = el}}>
             Digital Designer<br/>
             Front-end Developer<br/>
-            Ex-Drug Dealer<br/>
-            Aspiring Male Pornographic Actor<br/>
+            {/* Ex-Drug Dealer<br/>
+            Aspiring Male Pornographic Actor<br/> */}
             <br/>
-            <span>Available From: NOV-2020</span><br/>
+            <span>Available From: Nov-2020</span><br/>
             <span>Barcelona, ES</span><br/>
           </div>
         </div>
@@ -204,34 +204,34 @@ export default function Home() {
 
           <div className={styles.workListContainer}>
             <div className={styles.workProject}>
-              <p>Digital Dopamine</p>
+              <div className={styles.workProjectTitle}>Digital Dopamine</div>
             </div>
             <div className={styles.workProject}>
-              <p>Apollo 30</p>
+              <div className={styles.workProjectTitle}>Apollo 30</div>
             </div>
             <div className={styles.workProject}>
-              <p>Scranny's House</p>
+              <div className={styles.workProjectTitle}>Scranny's House</div>
             </div>
             <div className={styles.workProject}>
-              <p>Y.L.D. 666</p>
+              <div className={styles.workProjectTitle}>Y.L.D. 666</div>
             </div>
             <div className={styles.workProject}>
-              <p>The Fish & Chip Shop</p>
+              <div className={styles.workProjectTitle}>The Fish & Chip Shop</div>
             </div>
             <div className={styles.workProject}>
-              <p>Three Marks Coffee</p>
+              <div className={styles.workProjectTitle}>Three Marks Coffee</div>
             </div>
             <div className={styles.workProject}>
-              <p>Axel Balazsi</p>
+              <div className={styles.workProjectTitle}>Axel Balazsi</div>
             </div>
             <div className={styles.workProject}>
-              <p>Aaron Dormer</p>
+              <div className={styles.workProjectTitle}>Aaron Dormer</div>
             </div>
             <div className={styles.workProject}>
-              <p>Anuar Khalifi</p>
+              <div className={styles.workProjectTitle}>Anuar Khalifi</div>
             </div>
             <div className={styles.workProject}>
-              <p>Dead Soul Slags</p>
+              <div className={styles.workProjectTitle}>Dead Soul Slags</div>
             </div>
           </div>
 

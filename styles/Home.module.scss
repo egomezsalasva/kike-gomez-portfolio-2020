@@ -163,7 +163,7 @@ $beige: #F4EEE0;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 140px 0;
+  padding: 17rem 0 12rem;
 
   .workTitle{
     // background: yellow;
@@ -186,15 +186,16 @@ $beige: #F4EEE0;
   .workListContainer{
     .workProject{
       text-align: right;
-      p{
+      .workProjectTitle{
+        display: inline-block;
         margin: 0;
-        display: inline;
         font-family: 'MAZIUSREVIEW20.09-Regular';
-        font-weight: normal;
         font-size: 5rem;
         color: $black;
         letter-spacing: 0;
         line-height: 7rem;
+        height: 7rem;
+        
         cursor: pointer;
         &:hover{
           font-family: 'MAZIUSREVIEW20.09-Extraitalic';
