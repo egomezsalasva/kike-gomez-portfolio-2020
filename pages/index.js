@@ -9,43 +9,56 @@ import { useRef, useEffect } from 'react'
 export default function Home() {
 
   //INTRO ANIMATION
-    gsap.registerPlugin(TextPlugin)
 
-    let introTopBlock = useRef(null)
-    let introTopLoadingBar = useRef(null)
-    let introBottomBlock = useRef(null)
-    let introBottomLoadingBar = useRef(null)
-    let introTopNumberRef = useRef(null)
-    let introBottomNumberRef =useRef(null)
+    //GSAP Plugins
+      gsap.registerPlugin(TextPlugin)
+    //
+    //Preloader Refs
+      let introTopBlock = useRef(null)
+      let introTopLoadingBar = useRef(null)
+      let introBottomBlock = useRef(null)
+      let introBottomLoadingBar = useRef(null)
+      let introTopNumberRef = useRef(null)
+      let introBottomNumberRef =useRef(null)
+    //
+    //Top Fold Refs
+      let themeButtonRef = useRef(null)
+      let nameRef = useRef(null)
+      let surnameRef = useRef(null)
+      let descriptionRef = useRef(null)
+    //
 
-
-    let themeButtonRef = useRef(null)
-    let nameRef = useRef(null)
-    let surnameRef = useRef(null)
-    let descriptionRef = useRef(null)
     useEffect( () => {
-      const introTl = gsap.timeline()
-      const percentageTl = gsap.timeline()
 
-      const initialLoadSecs = 3
-      const initialLoadPerCentSecs = 0.03
+      //Timeline Inits
+        const introTl = gsap.timeline()
+        const percentageTl = gsap.timeline()
+      //
+      //Variables
+        const initialLoadSecs = 3
+        const initialLoadPerCentSecs = 0.03
+      //
 
-      introTl .to("body", {duration:0, overflow: "hidden"}, "start")
-              .to(introTopLoadingBar, {duration:initialLoadSecs, width: "100vw", ease: "power2.inOut"}, "start")
-              .to(introBottomLoadingBar, {duration:initialLoadSecs, width: "100vw", ease: "power2.inOut"}, "start")
+      //Intro Timeline
+                //Preloader
+        introTl .to("body", {duration:0, overflow: "hidden"}, "start")
+                .to(introTopLoadingBar, {duration:initialLoadSecs, width: "100vw", ease: "power2.inOut"}, "start")
+                .to(introBottomLoadingBar, {duration:initialLoadSecs, width: "100vw", ease: "power2.inOut"}, "start")
+                .to(introTopBlock, {duration:2, yPercent: -100, ease: "power2.inOut"}, "stage02")
+                .to(introBottomBlock, {duration:2, yPercent: 100, ease: "power2.inOut"}, "stage02")
+                .to(introTopBlock, {duration:0, display: "none"}, "stage03")
+                .to(introBottomBlock, {duration:0, display: "none"}, "stage03")
+                //Top Fold
+                // .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+                .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+                .from(surnameRef, {duration:2, y: "28rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
+                .from(descriptionRef, {duration:2, alpha: 0, ease: "power2.inOut"}, "stage04-=0.5")
+                .from(themeButtonRef, {duration:2, scale: 0, ease: "power2.inOut"}, "stage04")
+                .to("body", {duration:0, overflow: "visible"}, "stage05-=1")
+                .play()
+      //
 
-              .to(introTopBlock, {duration:2, yPercent: -100, ease: "power2.inOut"}, "stage02")
-              .to(introBottomBlock, {duration:2, yPercent: 100, ease: "power2.inOut"}, "stage02")
-              .to(introTopBlock, {duration:0, display: "none"}, "stage03")
-              .to(introBottomBlock, {duration:0, display: "none"}, "stage03")
-              // .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
-              .from(nameRef, {duration:2, y: "-16rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
-              .from(surnameRef, {duration:2, y: "28rem", alpha: 0, rotate: 5.625, ease: "power2.inOut"}, "stage04-=2")
-              .from(descriptionRef, {duration:2, alpha: 0, ease: "power2.inOut"}, "stage04-=0.5")
-              .from(themeButtonRef, {duration:2, scale: 0, ease: "power2.inOut"}, "stage04")
-              .to("body", {duration:0, overflow: "visible"}, "stage05-=1")
-              .play()
-        
+      //Percentage Timeline
         percentageTl.to(introBottomNumberRef, {duration:initialLoadPerCentSecs, text: "1", ease: "power2.inOut"})
                     .to(introBottomNumberRef, {duration:initialLoadPerCentSecs, text: "2", ease: "power2.inOut"})
                     .to(introBottomNumberRef, {duration:initialLoadPerCentSecs, text: "3", ease: "power2.inOut"})
@@ -145,10 +158,10 @@ export default function Home() {
                     .to(introBottomNumberRef, {duration:initialLoadPerCentSecs, text: "9", ease: "power2.inOut"})
                     .to(introTopNumberRef, {duration:initialLoadPerCentSecs, text: "9", ease: "power2.inOut"})
                     .play() 
+      //
+
     }, [])
     
-    
-
   //
 
 
@@ -212,9 +225,9 @@ export default function Home() {
             <div className={styles.workProject}>
               <div className={styles.workProjectTitle}>Scranny's House</div>
             </div>
-            <div className={styles.workProject}>
+            {/* <div className={styles.workProject}>
               <div className={styles.workProjectTitle}>Y.L.D. 666</div>
-            </div>
+            </div> */}
             <div className={styles.workProject}>
               <div className={styles.workProjectTitle}>The Fish & Chip Shop</div>
             </div>
@@ -230,9 +243,9 @@ export default function Home() {
             <div className={styles.workProject}>
               <div className={styles.workProjectTitle}>Anuar Khalifi</div>
             </div>
-            <div className={styles.workProject}>
+            {/* <div className={styles.workProject}>
               <div className={styles.workProjectTitle}>Dead Soul Slags</div>
-            </div>
+            </div> */}
           </div>
 
         </div>
