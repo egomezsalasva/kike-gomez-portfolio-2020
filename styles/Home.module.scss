@@ -9,7 +9,7 @@ $beige: #F4EEE0;
 }
 
 .topIntro{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -38,7 +38,7 @@ $beige: #F4EEE0;
 }
 
 .bottomIntro{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -63,6 +63,10 @@ $beige: #F4EEE0;
     font-size: 2rem;
     color: $beige;
     letter-spacing: 0;
+    &::after{
+      content: '%';
+      margin-left: 5px;
+    }
   }
 }
 
